@@ -1,3 +1,8 @@
+/**   
+ * Task
+  - Get longest word
+  - If words are of equal lenght return the word with highest number of vowels
+*/
 
 // returns the longest word from a given sentence
 function findLongestWord(sentence){
@@ -5,8 +10,10 @@ function findLongestWord(sentence){
     const arr = sentence.split(" ")
     let longest = arr[0]
     for (i = 1; i < arr.length; i++){
-        const strStrip = arr[i].replace(/[^a-zA-Z ]/g, ""); 
+        const strStrip = arr[i].replace(/[^a-zA-Z ]/g, "");
+
         if(strStrip.length > longest.length || strStrip.length === longest.length){
+
             if(strStrip.length === longest.length){
                 longest = getLongestWithVowels(strStrip, longest)
             }else{
