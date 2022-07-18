@@ -2,10 +2,10 @@
 // returns the longest word from a given sentence
 function findLongestWord(sentence){
     // creates an array of words from a given sentence
-    const arr = sentence.split([" "])
+    const arr = sentence.split(" ")
     let longest = arr[0]
     for (i = 1; i < arr.length; i++){
-        const strStrip = arr[i].split(",")[0]
+        const strStrip = arr[i].replace(/[^a-zA-Z ]/g, ""); 
         if(strStrip.length > longest.length || strStrip.length === longest.length){
             if(strStrip.length === longest.length){
                 longest = getLongestWithVowels(strStrip, longest)
@@ -37,7 +37,7 @@ function countVowels(str){
 
 
 
-// const str = "Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers"
+const str = "Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers"
 
 
-// console.log(findLongestWord(str))
+console.log(findLongestWord(str))
